@@ -34,7 +34,14 @@ const getWelcome = (firstName) => {
 //   );
 // };
 
+import PropTypes from 'prop-types';
 export const MyFirstApp = ({ title, subtitle }) => {
+
+  // Por eso hay proptypes
+  // if ( !title ){
+  //   throw new Error('El title no existe')
+  // }
+
   return (
     <>
       <h1>{title}</h1>
@@ -44,3 +51,13 @@ export const MyFirstApp = ({ title, subtitle }) => {
 };
 
 // vamos en 42 yarn dev
+
+MyFirstApp.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.number.isRequired,
+}
+
+MyFirstApp.defaultProps = {
+  title: 'No hay Titulo',
+  subtitle: 'No hay subtitulo '
+}
